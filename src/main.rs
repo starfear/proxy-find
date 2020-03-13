@@ -1,8 +1,5 @@
 use clap::{App as ClapApp, Arg as ClapArg};
-use futures::{
-    future::{TryFuture, TryFutureExt},
-    stream::{StreamExt, TryStream, TryStreamExt},
-};
+use futures::stream::TryStreamExt;
 use reqwest::{Error as ReqwestError, Proxy};
 use std::{error::Error, sync::Arc, thread::sleep as thread_sleep, time::Duration};
 use tokio::{
@@ -121,7 +118,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         thread_sleep(Duration::from_millis(cfg.delay));
     }
 
-    println!("Waiting `{}` seconds to process all requests...", cfg.timeout);
+    println!(
+        "Waiting `{}` seconds to process all requests...",
+        cfg.timeout
+    );
     thread_sleep(Duration::from_secs((cfg.timeout as f32 * 1.1) as u64));
 
     Ok(())
