@@ -122,7 +122,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         "Waiting `{}` seconds to process all requests...",
         cfg.timeout
     );
-    thread_sleep(Duration::from_secs((cfg.timeout as f32 * 1.1) as u64));
+    thread_sleep(Duration::from_secs(cfg.timeout));
 
     Ok(())
 }
