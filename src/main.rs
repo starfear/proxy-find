@@ -1,7 +1,7 @@
+use std::{error::Error, sync::Arc, thread::sleep as thread_sleep, time::Duration};
 use clap::{App as ClapApp, Arg as ClapArg};
 use futures::stream::TryStreamExt;
 use reqwest::{Error as ReqwestError, Proxy};
-use std::{error::Error, sync::Arc, thread::sleep as thread_sleep, time::Duration};
 use tokio::{
     fs,
     io::{BufReader, Error as IoError},
