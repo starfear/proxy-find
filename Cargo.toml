@@ -3,6 +3,7 @@ name = "proxy-find"
 version = "0.1.0"
 authors = ["Starfear"]
 edition = "2018"
+license = "MIT"
 
 [dependencies]
 clap = "2.33"
