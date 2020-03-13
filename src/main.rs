@@ -181,7 +181,5 @@ async fn load_list(path: &str) -> Result<Vec<String>, Box<dyn Error>> {
     Ok(BufReader::new(fs::File::open(path).await?)
         .lines()
         .try_collect::<Vec<_>>()
-        .await?
-        .into_iter()
-        .collect())
+        .await?)
 }
