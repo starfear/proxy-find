@@ -82,7 +82,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         cores: matches
             .value_of("cores")
             .map(|x| x.parse().expect("Invalid amount of cores"))
-            .unwrap_or(num_cpus::get()),
+            .unwrap_or_else(num_cpus::get),
         timeout: matches
             .value_of("timeout")
             .map(|x| x.parse().expect("Invalid timeout"))
