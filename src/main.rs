@@ -137,8 +137,6 @@ async fn check_proxy(target: &str, timeout: u64, proxy: &str) -> Result<bool, Re
 
     let resp = client.get(target).send().await;
 
-    println!("{:?}", resp);
-
     Ok(resp.is_ok())
 }
 
